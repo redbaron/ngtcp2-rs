@@ -1,0 +1,24 @@
+[package]
+name = "ngtcp2-sys"
+build = "build.rs"
+version = "0.1.0+ngtcp2.1.11.0"
+description = "Bindgen for ngtcp2"
+edition = "2024"
+links = "ngtcp2"
+repository = "https://github.com/redbaron/ngtcp2-rs"
+
+[lib]
+doctest = false
+
+[build-dependencies.bindgen]
+optional = true
+version = "*"
+default-features = false
+features = []
+
+[features]
+default = []
+lto = []
+
+[build-dependencies]
+cmake = "*"
