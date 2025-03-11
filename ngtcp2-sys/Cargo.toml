@@ -11,8 +11,7 @@ repository = "https://github.com/redbaron/ngtcp2-rs"
 doctest = false
 
 [build-dependencies.bindgen]
-optional = true
-version = "*"
+version = "0.71.1"
 default-features = false
 features = []
 
@@ -21,4 +20,4 @@ default = []
 lto = []
 
 [build-dependencies]
-cmake = "*"
+cmake = "0.1.54"

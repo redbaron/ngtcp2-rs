@@ -1,9 +1,8 @@
 [package]
 name = "ngtcp2-rs"
 version = "0.1.0"
-description = "ngtcp2"
+description = "Safe Rust bindings for ngtcp2"
 edition = "2024"
-links = "ngtcp2"
 repository = "https://github.com/redbaron/ngtcp2-rs"
 
 [dependencies]
