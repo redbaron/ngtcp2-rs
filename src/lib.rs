@@ -1,4 +1,10 @@
+pub mod error;
+pub mod path;
+pub mod pkt;
+
 use ngtcp2_sys;
+
+pub type Result<T> = std::result::Result<T, error::ErrorCode>;
 
 pub struct Version {
     pub version_num: i32,

@@ -4,9 +4,12 @@ use cmake::Config;
 
 fn main() {
     let lib = Config::new("ngtcp2")
+        .define("ENABLE_STATIC_LIB", "ON")
         .define("ENABLE_SHARED_LIB", "OFF")
         .define("ENABLE_OPENSSL", "OFF")
         .define("BUILD_TESTING", "OFF")
+        .define("CMAKE_C_VISIBILITY_PRESET", "hidden")
+        .cflag("-flto")
         .build();
     println!("cargo::rustc-link-search=native={}", lib.join("lib").display());
     println!("cargo::rustc-link-lib=static=ngtcp2");
@@ -16,8 +19,6 @@ fn main() {
         .wrap_unsafe_ops(true)
         .generate_cstr(true)
         .clang_arg(format!("-I{}", lib.join("include").display()))
-        // The input header we would like to generate
-        // bindings for.
         .header("wrapper.h")
         // Tell cargo to invalidate the built crate whenever any of the
         // included header files changed.
