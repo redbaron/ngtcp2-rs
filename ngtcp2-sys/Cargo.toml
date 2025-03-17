@@ -13,7 +13,7 @@ doctest = false
 [build-dependencies.bindgen]
 version = "0.71.1"
 default-features = false
-features = []
+features = ["runtime"]
 
 [features]
 default = []

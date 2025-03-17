@@ -1,5 +1,6 @@
 use std::env;
 use std::path::PathBuf;
+use bindgen::EnumVariation;
 use cmake::Config;
 
 fn main() {
@@ -18,6 +19,7 @@ fn main() {
     let bindings = bindgen::Builder::default()
         .wrap_unsafe_ops(true)
         .generate_cstr(true)
+        .default_enum_style(EnumVariation::Rust{non_exhaustive: false})
         .clang_arg(format!("-I{}", lib.join("include").display()))
         .header("wrapper.h")
         // Tell cargo to invalidate the built crate whenever any of the

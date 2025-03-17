@@ -1,6 +1,11 @@
 pub mod error;
 pub mod path;
-pub mod pkt;
+
+mod pkt;
+mod types;
+
+pub use pkt::decode_version_cid as pkt_decode_version_cid;
+pub use pkt::decode_hd_long as pkt_decode_hd_long;
 
 use ngtcp2_sys;
 

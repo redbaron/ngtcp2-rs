@@ -1,7 +1,8 @@
-use std::net::SocketAddr;
+use socket2::SockAddr;
 
-#[derive(Copy,Clone,Debug, Eq, PartialEq, Hash)]
+#[derive(Clone,Debug, Eq, PartialEq, Hash)]
 pub struct Path {
-    local: SocketAddr,
-    remote: SocketAddr,
+    pub local: SockAddr,
+    pub remote: SockAddr,
 }
+
